@@ -27,6 +27,9 @@ public class StringLesson {
         String rest = name.substring(1);
 
         System.out.println("First: " + first + " Rest: " + rest);
+        System.out.println(2000 % 4);
 
+        //StringBuilder
+        
     }
 }
