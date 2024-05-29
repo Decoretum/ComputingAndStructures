@@ -1,7 +1,7 @@
 package Introduction;
 
 public class Factorial {
-    static float iter(int n)
+    public float iter(int n)
     {
         //from 1 to n
         float prod = 1;
@@ -12,7 +12,7 @@ public class Factorial {
         return prod;
     }
 
-    static float recur(int n)
+    public float recur(int n)
     {
         if(n == 1)
         {
@@ -38,8 +38,9 @@ public class Factorial {
 
     public static void main (String args[])
     {
-        System.out.println(iter(4));
-        System.out.println(recur(4));
+        Factorial f = new Factorial();
+        System.out.println(f.iter(4));
+        System.out.println(f.recur(4));
         System.out.println(recurtail(4, 1));
     }
 }
