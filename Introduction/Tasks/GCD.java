@@ -1,7 +1,7 @@
 package Introduction.Tasks;
 
 public class GCD { //Greatest Common Divisor
-    static double gcd(double n1, double n2)
+    public static double gcd(double n1, double n2)
     {
         if (n1 % n2 == 0)
         {
