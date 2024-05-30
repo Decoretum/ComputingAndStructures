@@ -72,7 +72,7 @@ public class BinarySubstring {
                     break;
                 }
             }
-            System.out.println("Quotient: " + quotient + " Remainder: " + remainder);
+            // System.out.println("Quotient: " + quotient + " Remainder: " + remainder);
 
         }
         // // System.out.println("Last remainder: " + remainder);
@@ -90,6 +90,6 @@ public class BinarySubstring {
     public static void main (String args[])
     {
         // System.out.println(substring(10));
-        System.out.println(to_n(56, 2));
+        System.out.println(to_n(14, 2));
     }
 }
