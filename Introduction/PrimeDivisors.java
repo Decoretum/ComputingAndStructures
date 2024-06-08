@@ -1,14 +1,15 @@
 package Introduction;
 import java.util.*;
 
-public class Divisors {
+public class PrimeDivisors {
     
-    //Find divisors
+    // Find prime factors or prime divisors
     public static void divisors(int num){
         ArrayList<Integer> divs = new ArrayList<>();
         int div = 2;
-        int orig = num;
+        int orig = num; //dividend
         while (num > 1){
+            System.out.println(num);
             if (num % div == 0)
             {  
                 if (!divs.contains(div))
@@ -26,6 +27,6 @@ public class Divisors {
 
     }
     public static void main (String args[]){
-        divisors(12);
+        divisors(24);
     }
 }
