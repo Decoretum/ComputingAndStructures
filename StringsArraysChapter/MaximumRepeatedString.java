@@ -5,7 +5,7 @@ import java.util.*;
 public class MaximumRepeatedString {
     public static void maxRepeat(String s){
         HashMap<Character, Integer> hm = new HashMap<>();
-        int counter = 0;
+        int counter = 1;
 
         //We chain operations based on the previous element
         for (int i = 0; i < s.length(); i++)
@@ -15,7 +15,6 @@ public class MaximumRepeatedString {
             if (i == 0)
             {
                 hm.put(c, 1);
-                counter++;
             }
             else
             {
