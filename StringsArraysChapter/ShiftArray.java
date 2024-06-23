@@ -7,12 +7,12 @@ public class ShiftArray {
     public static int[] shift(int[] a, int rotations, String LorR)
     {
 
-        if (LorR.equals("R"))
+        if (LorR.equals("R"))       
         {
             //Shift based on rotations
             for (int i = 0; i < rotations; i++)
             {
-                //Put last element to the first element position
+                //Put last ELEMENT to the first element position
                 int lastTemp = a[a.length - 1];
                 int firstTemp = a[0];
                 a[0] = lastTemp;
