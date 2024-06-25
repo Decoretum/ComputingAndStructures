@@ -3,10 +3,10 @@ import java.util.*;
 
 public class ShiftNonZeroElements {
 
-	public static int[] shiftNonZero(int [] a, boolean isLeft)
+	public static int[] shiftNonZero(int [] a, short dig)
 	{
 
-		if (!isLeft)
+		if (dig == 0)
 		{
 			//Start scanning from the right
 			int p = a.length - 1;
@@ -14,9 +14,11 @@ public class ShiftNonZeroElements {
 			for (; p >= 0; p--)
 			{
 				int curr = a[p];
-				if ((curr != 0) && (p != a.length - 1)) //If current element != 0 and it's not in the edge
+				boolean shiftable = (curr != 0) && (p != a.length - 1);
+				if (shiftable) //If current element != 0 and it's not in the edge
 				{
 					boolean moving = true;
+					boolean shifted = false;
 					int j = p;
 					int pos = 0;
 
@@ -26,6 +28,7 @@ public class ShiftNonZeroElements {
 						boolean canShift = a[j + 1] == 0;
 						if (canShift)
 						{
+							shifted = true;
 							pos++;
 							j++;
 						}
@@ -34,8 +37,54 @@ public class ShiftNonZeroElements {
 							break;
 						}
 					}
-					a[p + pos] = curr;
-					a[p] = 0;
+
+					if (shifted)
+					{
+						a[p + pos] = curr;
+						a[p] = 0;
+					}
+					
+				}
+			}
+		}
+
+		else //Non zero elements shifted to the left
+		{
+			//Start scanning from the left
+			int p = 0;
+
+			for (; p <= a.length - 1; p++)
+			{
+				int curr = a[p];
+				boolean shiftable = (curr != 0) && (p != 0);
+				if (shiftable)
+				{
+					boolean moving = true;
+					boolean shifted = false;
+					int j = p;
+					int pos = 0;
+
+					//shifting through the zeroes
+					while (moving && (j - 1) >= 0)
+					{
+						boolean canShift = a[j - 1] == 0;
+						if (canShift)
+						{
+							shifted = true;
+							pos++;
+							j--;
+						}	
+						else
+						{
+							break;
+						}
+					}
+
+					if (shifted)
+					{
+						a[p - pos] = curr;
+						a[p] = 0;
+					}
 				}
 			}
 		}
@@ -46,9 +95,8 @@ public class ShiftNonZeroElements {
 
 	public static void main (String args[])
 	{
-		int[] test = {0, 10, 0, 0, 30, 60, 0, 200, 0};
-		System.out.println(shiftNonZero(test, false));
+		int[] test = {12, 0, 2012, 23, 12, 0, 123, 2, 3, 4};
+		System.out.println(shiftNonZero(test, (short) 0));
+		System.out.println(shiftNonZero(test, (short) 1));
 	}
 }
-
-//{60, 0, 0, 200}
