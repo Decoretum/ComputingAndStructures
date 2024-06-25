@@ -1,5 +1,5 @@
 # JavaDataStructures
-Using the book <b>"Data Structures in Java"</b>, I will be traversing the topics in order to understand Java Data Structures and Algorithms. VSCode was used as the Integrated Development Environment (IDE) for applying the concepts in the book. Obviously, <b>Java</b> was used as the programming language. I didn't pursue this for learning Java but for strengthening my foundations in <b>Data Structures and Algorithms</b>. I believe that strengthening my foundation in this field would help me soar high in other fields of technology such as Network Engineering, Software Development, and Business Intelligence.
+Using the book <b>"Data Structures in Java"</b>, I will be traversing the topics in order to understand Java Data Structures and Algorithms. VSCode and Sublime Text were used as the Integrated Development Environments (IDE) for applying the concepts in the book. Obviously, <b>Java</b> was used as the programming language. I didn't pursue this for learning Java but for strengthening my foundations in <b>Data Structures and Algorithms</b>. I believe that strengthening my foundation in this field would help me soar high in other fields of technology such as Network Engineering, Software Development, and Business Intelligence.
 <br>
 
 ## Disclaimer
