@@ -23,5 +23,7 @@ solution:
 ---------------
 1 1 1 0 0 1 0 0
 
+Note: Don't add leading 0
+
 11100100
 That is how one would write -28 in 8 bit binary.

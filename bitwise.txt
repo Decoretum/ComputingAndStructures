@@ -33,7 +33,7 @@ Bitwise Right Shift operators
 = shift the bits of an integer (or bitwise-compatible type) left or right, 
 thereby performing bit manipulation operations that are much faster at the hardware level
 
-= left shift -> shift bits to the left, filling with zeroes 
+= left shift -> shift bits to the left, filling with zeroes  in the right
 Ex. a = 5 (0101), a << 2 = 10100
 
 = right shift -> Shifts bits to the right, preserving the sign bit.
@@ -58,3 +58,6 @@ but -12 would be written as 10100. Notice that there is nothing instrinsically c
 one system over another. Either 11100 or 10100 can be used to represent -12, 
 it just depends on what system of interpretation is used. 
 That is, a human programmer chooses the meaning of the bits.
+
+- Add leading 0 to indicate binary string pertains to positive integer
+- Add leading 1 to indicate binary string pertains to negative integer (2's complement)

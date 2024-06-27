@@ -6,6 +6,8 @@ public class LowLevel {
         int a = 12;
         int b = 2;
         int extractedBits = a >>> b;
-        System.out.println(extractedBits);
+        int x = 5; //     0000000000000101
+        int y = x << 1; //0000000000001010
+        System.out.println((x << 1) & x);
     }
 }
