@@ -2,9 +2,13 @@ Source: https://www.cs.cornell.edu/~tomf/notes/cps104/twoscomp.html
 
 Two's complement is not a complicated scheme and is not well served by anything lengthly. Therefore, after this introduction, which explains what two's complement is and how to use it, there are mostly examples.
 
-Two's complement is the way every computer I know of chooses to represent integers. To get the two's complement negative notation of an integer, you write out the number in binary. You then invert the digits, and add one to the result.
+Two's complement is the way every computer I know of chooses to represent integers. 
+To get the two's complement negative notation (signed two's complement) of an integer, 
+you write out the number in binary. You then invert the digits, and add one to the result.
 
-Suppose we're working with 8 bit quantities (for simplicity's sake) and suppose we want to find how -28 would be expressed in two's complement notation. First we write out 28 in binary form.
+Suppose we're working with 8 bit quantities (for simplicity's sake) and 
+suppose we want to find how -28 would be expressed in two's complement notation. 
+First we write out 28 in binary form.
 
 00011100
 Then we invert the digits. 0 becomes 1, 1 becomes 0.

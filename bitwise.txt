@@ -1,0 +1,60 @@
+Bitwise (According to Oxford Language)
+- designating an operator in a programming language that manipulates the individual bits in a byte or word.
+
+Word (According to Saylor Academy, CS201)
+- A word is a fixed-sized piece of data handled as a unit by the instruction set or the hardware of 
+the processor. The number of bits in a word (the word size, word width, or word length) is an 
+important characteristic of any specific processor design or computer architecture.
+- A byte is 8 bits, a Word is 2 bytes (16 bits)
+
+AND Operator (&)
+- performs AND bitwise operators between two values (Binary)
+- takes two numbers as operands and does AND on every bit of two numbers. 
+The result of AND is 1 only if both bits are 1.  
+
+OR Operator (|)
+- performs OR Bitwise operator
+- takes two numbers as operands and does OR on every bit of two numbers. 
+The result of OR is 1 if any of the two bits is 1
+
+XOR Operator (^)
+- takes two numbers as operands and does XOR on every bit of two numbers
+- The result of XOR is 1 if the two bits are different. 
+
+NOT Operator (~)
+- takes one number and inverts all bits of it
+
+
+Bitwise Right Shift operators
+- Java supports signed right shift and unsigned right shift
+- NOTE: Sign bit: 0 -> positive, 1 -> negative
+
+- How does it work? (https://www.shiksha.com/online-courses/articles/shift-operator-in-java-blogId-164297)
+= shift the bits of an integer (or bitwise-compatible type) left or right, 
+thereby performing bit manipulation operations that are much faster at the hardware level
+
+= left shift -> shift bits to the left, filling with zeroes 
+Ex. a = 5 (0101), a << 2 = 10100
+
+= right shift -> Shifts bits to the right, preserving the sign bit.
+= 1s will fill out the trailing 0s from the left
+Ex. a = -20 (11101100), a >> 2 = 11111011 (-5)
+11 is the sign bit for (-)
+
+Ex. y = 4 (100), y >> 1 = 2
+y = -4, y >> 1 = -2
+
+= unsigned right shift -> Shifts bits to the right, ALWAYS filling with zeros on the left.
+= returns a number whose binary representation is the first operand shifted 
+by the specified number of bits to the right. 
+Excess bits shifted off to the right are discarded, and zero bits are shifted in from the left
+Ex. a = -20 (1111111111101100), a >>> 2 = 00111111111111111111111111111011 (1073741819)
+
+
+Two's complements (https://cs.calvin.edu/activities/books/rit/chapter5/negative.htm)
+For technical reasons, a different scheme, called "two's complement" is more often used for 
+representing negative numbers. In this system, a positive 12 is still 01100, 
+but -12 would be written as 10100. Notice that there is nothing instrinsically correct about 
+one system over another. Either 11100 or 10100 can be used to represent -12, 
+it just depends on what system of interpretation is used. 
+That is, a human programmer chooses the meaning of the bits.

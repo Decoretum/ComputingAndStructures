@@ -6,7 +6,7 @@ public class ShiftArray {
     //Without making a new array
     public static int[] shift(int[] a, int rotations, String LorR)
     {
-
+        
         if (LorR.equals("R"))       
         {
             //Shift based on rotations
