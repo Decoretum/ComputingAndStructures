@@ -11,14 +11,14 @@ public class InsertionSort {
         //Assume that the first element is already sorted since
         for (int i = 1; i <= a.length-1; i++)
         {
-            for (int j = i - 1; j >= 0; j--)
+            for (int j = i; j >= 1; j--)
             {
-                int curr = a[j + 1];
-                int back = a[j];
+                int curr = a[j];
+                int back = a[j - 1];
                 if (curr < back)
                 {
-                    a[j] = curr;
-                    a[j + 1] = back;
+                    a[j] = back;
+                    a[j - 1] = curr;
                 }
             }
         }
