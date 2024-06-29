@@ -5,4 +5,4 @@ Personally, I've added notes and other text files to aid me in my learning that 
 - geeksforgeeks.org
 
 ## Disclaimer
-All the code files found in this repository was made by Gael Estrera. Some exercises and scenarios' code from the book were either tailor-fitted by him, or he used a different code solution for a certain scenario presented in the book.
+All the code files found in this repository was made by Gael Estrera. Few of the exercises and scenarios' code from the book were either tailor-fitted by him, but mostly he used a different code solution for a certain scenario presented in the book and then compared his solutions to the book's solutions.
