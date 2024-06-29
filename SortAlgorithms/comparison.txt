@@ -1,0 +1,10 @@
+Bubble, Insertion, and Selection
+
+A bubble sort is rarely used: it’s most effective when the data value are already almost sorted.
+A selection sort is used infrequently: while this algorithm is effective for very short lists, the
+insertion sort is often superior. An insertion sort is useful if the data are already almost sorted, or
+if the list is very short (e.g., at most 50 items).
+
+Among the three preceding algorithms, only insertion sort is used in practice, typically as an
+auxiliary algorithm in conjunction with other more sophisticated sorting algorithms (e.g., quick
+sort or merge sort).
