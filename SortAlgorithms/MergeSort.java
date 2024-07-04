@@ -8,11 +8,10 @@ public class MergeSort { //https://www.geeksforgeeks.org/merge-sort/
 	{
 		int max = Math.max(a1.length, a2.length);
 		int[] c = new int[max];
-
 	}
 
 	public static void main (String args[])
 	{
-
+		
 	}
 }
