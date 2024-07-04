@@ -1,0 +1,4 @@
+Three ways of Doing Merge Sort
+
+1. Merge Sort with a Third Array
+- 3rd array is the sorted array product of 1st and 2nd array

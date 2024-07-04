@@ -8,6 +8,8 @@ public class LowLevel {
         int extractedBits = a >>> b;
         int x = 5; //     0000000000000101
         int y = x << 1; //0000000000001010
-        System.out.println((x << 1) & x);
+        int y2 = x >> 1; //000000000000010
+        // System.out.println((x << 1) & x);
+        System.out.println(Integer.toBinaryString(y2));
     }
 }
