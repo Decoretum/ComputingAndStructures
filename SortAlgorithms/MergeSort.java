@@ -12,6 +12,7 @@ public class MergeSort { //https://www.geeksforgeeks.org/merge-sort/
 
 	public static void main (String args[])
 	{
-		
+		int[]a = {1, 5, 200, 32};
+		int[]b = {2,21, 2, 9};
 	}
 }
