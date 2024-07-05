@@ -4,7 +4,7 @@ NOTE: In a recursive function, after you return something, the function receivin
 continue with the operations that are AFTER the variable containing the recursive call 
 
 It's about the LAYERS. Once a "layer" of recursive call is finished, it returns "something", the layer above this layer
-will do its operations (since the previous operation is a recursive call)
+will continue to di its operations after that "something" has been returned (since the previous operation is a recursive call)
 
 1. Merge Sort with a Third Array
 - 3rd array is the sorted array product of 1st and 2nd array
@@ -12,3 +12,5 @@ will do its operations (since the previous operation is a recursive call)
 
 Process Flow:
 1. Split Array into equal halves
+2. Through Recursion, ALL left halves of main array and sub-arrays will be divided then merged together
+3. Through Recursion, ALL right halves of main 

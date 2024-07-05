@@ -3,89 +3,112 @@ import java.lang.Math;
 import java.util.Arrays;
 
 
+public class MergeSort {
 
-public class MergeSort { //https://www.geeksforgeeks.org/merge-sort/
-
-   //Merging two arrays
-   //one array can be >=< in length than the other
-   public static int[] merge(int[] a1, int[] a2) 
-   {
-      //2 pointers
-      int[] newArray = new int[a1.length + a2.length];
-      int p = 0; //new Array pointer
+    public static int[] merge(int[] a, int[] b)
+    {
+      int[] c = new int[a.length + b.length];
+      
+      //2 Pointers
       int i = 0;
       int j = 0;
-      while (i <= a1.length - 1 && j <= a2.length - 1)
-      {
-         int left = a1[i];
-         int right = a2[j];
-         if (left < right)
+
+      //New Array Pointer
+      int p = 0;
+        
+      while(i <= a.length - 1 && j <= b.length - 1)
+        {
+            int left = a[i];
+            int right = b[j];
+
+            if (left < right)
+            {
+               c[p] = left;
+               i++;
+               p++;
+            } else {
+               c[p] = right;
+               j++;
+               p++;
+            }
+        }
+
+        // If a sub array's pointer didn't finish iterating, then it means that it's remaining elements are greater than the 
+        // other sub-array's elements
+
+         while (i <= a.length - 1)
          {
-            newArray[p] = left;
-            p++;
+            c[p] = a[i];
             i++;
-         } else {
-            newArray[p] = right;
+            p++;
+         } 
+         
+         while (j <= b.length - 1)
+         {
+            c[p] = b[j];
             p++;
             j++;
-
          }
-      }
 
-      System.out.println("MERGED ARRAY SO FAR " + Arrays.stream(newArray).boxed().toList());
-      System.out.println("AT THIS POINT, LEFT IS " + Arrays.stream(a1).boxed().toList() + " WHILE RIGHT IS " + Arrays.stream(a2).boxed().toList());
-      System.out.println("i POINTER IS " + i + " AND J POINTER IS " + j);
+         return c;
+    }
 
-      while (i <= a1.length - 1)
-      {
-         newArray[p] = a1[i];
-         i++;
-         p++;
-      } while (j <= a2.length - 1)
-      {
-         newArray[p] = a2[j];
-         j++;
-         p++;
-      }
-      return newArray;
-   }
+    public static int[] mergeSort(int[] a, int layer)
+    {
+        /* System.out.println("Current layer " + layer); */
+
+        //Base Condition for returning once array length is 1
+        if(a.length == 1)
+        {
+            /* System.out.println("Array is " + Arrays.stream(a).boxed().toList() + " with the layer of " + layer); */
+            return a;
+        }
+
+        //Split array into equal halves
+        int half = (int) Math.floor(a.length / 2); 
+        int remainder = a.length % 2;
+
+        //Initialize two empty arrays
+        int[] a1 = new int[half];
+        int[] a2 = new int[half + remainder];
+
+        //First half
+        for (int i = 0; i <= half - 1; i++)
+        {
+            a1[i] = a[i];
+        }
+
+        //Second half
+        for (int j = (half), i = 0; j <= a.length - 1; j++, i++)
+        {
+            a2[i] = a[j];
+        }
+
+        //Keep Dividing them until array length is 1
+        int[] sortedA1 = mergeSort(a1, layer + 1); 
+        int[] sortedA2 = mergeSort(a2, layer + 1);
+
+        /* 
+        System.out.println("Returning in this recursive call is " + Arrays.stream(a).boxed().toList());
+        System.out.println("Left array is " + Arrays.stream(a1).boxed().toList());
+        System.out.println("Right array is " + Arrays.stream(a2).boxed().toList());
+        System.out.println(""); 
+        */
+
+        //Returning a "merged" version of the arrays to the previous layer of recursion
+        int [] sorted = merge(sortedA1, sortedA2);
+        if (layer == 0)
+         {
+            System.out.println("Final sorted Array is " + Arrays.stream(sorted).boxed().toList());
+         }
+        return sorted;
+    }
 
 
-   public static int[] mergeSort(int[] a)
-   {
-      if (a.length == 1)
-      {
-         return a;
-      }
 
-      //Split Array into equal halves
-      int half = (int) Math.floor(a.length / 2);
-      int remainder = a.length % 2;
-      
-      int[] a1 = new int[half];
-      int[] a2 = new int[half + remainder];
-      for (int i = 0; i <= (half - 1); i++)
-      {
-         a1[i] = a[i];
-      }
-
-      for (int i = 0, j = half; j <= (a.length  - 1); i++, j++)
-      {
-         a2[i] = a[j];
-      }
-
-      //This section will be done PER LAYER ABOVE after "a" is "returned"
-      int[] sortedA1 = mergeSort(a1); //result if (a.length == 1)
-      int[] sortedA2 = mergeSort(a2); //result if (a.length == 1)
-
-      return merge(sortedA1, sortedA2);
-   }
-
-	public static void main (String args[])
-	{
-	  int[]a = {12, 8, 9, 3, 6, 5, 4};
-	  int[]b = {2, 21, 2, 9, 10};
-     int[] c = mergeSort(a);
-     System.out.println(Arrays.stream(c).boxed().toList());
-	}
+    public static void main (String args[])
+    {
+        int[] t = {5, 2, 1, 3};
+        mergeSort(t, 0);
+    }
 }
