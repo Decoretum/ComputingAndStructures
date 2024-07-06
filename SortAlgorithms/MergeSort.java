@@ -3,7 +3,7 @@ import java.lang.Math;
 import java.util.Arrays;
 
 
-public class MergeSort {
+public class MergeSort { //https://www.w3schools.com/dsa/dsa_algo_mergesort.php, https://www.geeksforgeeks.org/merge-sort/
 
     public static int[] merge(int[] a, int[] b)
     {
@@ -72,14 +72,14 @@ public class MergeSort {
         int[] a1 = new int[half];
         int[] a2 = new int[half + remainder];
 
-        //First half
+        //First sub-array
         for (int i = 0; i <= half - 1; i++)
         {
             a1[i] = a[i];
         }
 
-        //Second half
-        for (int j = (half), i = 0; j <= a.length - 1; j++, i++)
+        //Second sub-array
+        for (int j = half, i = 0; j <= a.length - 1; j++, i++)
         {
             a2[i] = a[j];
         }
@@ -111,4 +111,15 @@ public class MergeSort {
         int[] t = {5, 2, 1, 3};
         mergeSort(t, 0);
     }
+
+
+   // Time Complexity:
+
+   // Best Case: O(n log n), When the array is already sorted or nearly sorted.
+   // Average Case: O(n log n), When the array is randomly ordered.
+   // Worst Case: O(n log n), When the array is sorted in reverse order.
+
+   // Space Complexity: O(n), Additional space is required for the temporary array used during merging
+
+   
 }

@@ -1,4 +1,4 @@
-Three ways of Doing Merge Sort
+
 
 NOTE: In a recursive function, after you return something, the function receiving the recursive result will
 continue with the operations that are AFTER the variable containing the recursive call 
@@ -12,5 +12,21 @@ will continue to di its operations after that "something" has been returned (sin
 
 Process Flow:
 1. Split Array into equal halves
-2. Through Recursion, ALL left halves of main array and sub-arrays will be divided then merged together
-3. Through Recursion, ALL right halves of main 
+2. Through Recursion, ALL left halves of main array and sub-arrays will be divided then merged together, then THEIR RIGHT halves will do the same
+3. Through Recursion, ALL right halves of main will have their left THEN right subarrays divided then merged
+
+
+Applications of Merge Sort:
+Sorting large datasets
+External sorting (when the dataset is too large to fit in memory)
+Inversion counting (counting the number of inversions in an array)
+Finding the median of an array
+
+Advantages of Merge Sort:
+Stability : Merge sort is a stable sorting algorithm, which means it maintains the relative order of equal elements in the input array.
+Guaranteed worst-case performance: Merge sort has a worst-case time complexity of O(N logN) , which means it performs well even on large datasets.
+Simple to implement: The divide-and-conquer approach is straightforward.
+
+Disadvantages of Merge Sort:
+Space complexity: Merge sort requires additional memory to store the merged sub-arrays during the sorting process.
+Not in-place: Merge sort is not an in-place sorting algorithm, which means it requires additional memory to store the sorted data. This can be a disadvantage in applications where memory usage is a concern.

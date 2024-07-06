@@ -1,0 +1,9 @@
+QuickSort
+
+Process Flow:
+1. Assume the rightmost array element is pivot
+2. Using the pivot, iterate to figure out which elements are lesser than the pivot.
+- If element < pivot, then the pivot index (Default: 0) will increment by 1
+3. After the iteration, switch the values of the element of pivot index and the pivot itself
+4. Using the 2 QuickSort recursive functions after the partition, quicksort the elements less than the pivot index (sub-array 1) and quicksort the elements greater than the pivot index (sub-array 2)
+5. If the sub-array only has 1 element, the function must have a condition to not resume operations

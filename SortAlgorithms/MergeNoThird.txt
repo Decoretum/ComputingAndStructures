@@ -1,0 +1,5 @@
+Merging Arrays without a third array
+
+Assumption:
+- There is a receiver array and the transferring array
+- Receiver array has equal length with the transferring array
