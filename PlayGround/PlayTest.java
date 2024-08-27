@@ -15,10 +15,11 @@ public class PlayTest {
 		LocalDate dateRented = LocalDate.parse(temp, formatter);
 		Long duration = now.until(dateRented, ChronoUnit.DAYS);
 		System.out.println(2 & 13);
-
+		LinkedList<Integer> ll = new LinkedList<>();
+		
 
         int[]a = {1, 2, 4, 5, 6};
-        System.out.println(a[0:3]);
+        System.out.println(a);
 	}
 
 }

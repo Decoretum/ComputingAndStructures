@@ -1,0 +1,88 @@
+https://www.geeksforgeeks.org/greedy-algorithms/
+
+What is Greedy Algorithm?
+A greedy algorithm is a type of optimization algorithm that makes locally optimal choices at each step to find a globally optimal solution. 
+It operates on the principle of “taking the best option now” without considering the long-term consequences.
+
+To learn what is greedy method and how to use the greedy approach, read the given tutorial on the Greedy Algorithm:
+
+Tutorial:
+https://www.geeksforgeeks.org/introduction-to-greedy-algorithm-data-structures-and-algorithm-tutorials/
+
+What is a Greedy Algorithm?
+A greedy algorithm is a problem-solving technique that makes the best local choice at each step in the hope of finding the global optimum solution. 
+It prioritizes immediate benefits over long-term consequences, making decisions based on the current situation without considering future implications. 
+While this approach can be efficient and straightforward, it doesn’t guarantee the best overall outcome for all problems.
+
+However, it’s important to note that not all problems are suitable for greedy algorithms. 
+
+They work best when the problem exhibits the following properties:
+
+Greedy Choice Property: The optimal solution can be constructed by making the best local choice at each step.
+Optimal Substructure: The optimal solution to the problem contains the optimal solutions to its subproblems.
+
+Characteristics of Greedy Algorithm
+Here are the characteristics of a greedy algorithm:
+
+Greedy algorithms are simple and easy to implement.
+They are efficient in terms of time complexity, often providing quick solutions.
+Greedy algorithms are used for optimization problems where a locally optimal choice leads to a globally optimal solution.
+These algorithms do not reconsider previous choices, as they make decisions based on current information without looking ahead.
+Greedy algorithms are suitable for problems for optimal substructure.
+
+Examples of Greedy Algorithm
+Several well-known algorithms fall under the category of greedy algorithms. Here are a few examples:
+
+Dijkstra’s Algorithm: This algorithm finds the shortest path between two nodes in a graph. 
+It works by repeatedly choosing the shortest edge available from the current node.
+
+Kruskal’s Algorithm: This algorithm finds the minimum spanning tree of a graph. 
+It works by repeatedly choosing the edge with the minimum weight that does not create a cycle.
+
+Fractional Knapsack Problem: This problem involves selecting items with the highest value-to-weight ratio to fill a knapsack with a limited capacity. 
+The greedy algorithm selects items in decreasing order of their value-to-weight ratio until the knapsack is full.
+
+Scheduling and Resource Allocation : The greedy algorithm can be used to schedule jobs or allocate resources in an efficient manner.
+
+Coin Change Problem : The greedy algorithm can be used to make change for a given amount with the minimum number of coins, 
+by always choosing the coin with the highest value that is less than the remaining amount to be changed.
+
+Huffman Coding : The greedy algorithm can be used to generate a prefix-free code for data compression, 
+by constructing a binary tree in a way that the frequency of each character is taken into consideration.
+
+
+Why to use Greedy Approach?
+Here are some reasons why you might use the Greedy Approach:
+
+Simple and easy to understand: The Greedy Approach is straightforward and easy to implement, making it a good choice for beginners.
+
+Fast and efficient: It usually finds a solution quickly, making it suitable for problems where time is a constraint.
+
+Provides a good enough solution: While not always optimal, the Greedy Approach often finds a solution that is close to the best possible solution.
+
+Can be used as a building block for other algorithms: The Greedy Approach can be used as a starting point for developing more complex algorithms.
+
+Useful for a variety of problems: The Greedy Approach can be applied to a wide range of optimization problems, 
+including knapsack problems, scheduling problems, and routing problems. However, 
+it’s important to remember that the Greedy Approach doesn’t always find the optimal solution . 
+There are cases where it can lead to suboptimal solutions. Therefore, it is necessary to carefully consider the problem and the 
+potential drawbacks before using the Greedy Approach.
+
+
+How does the Greedy Algorithm works?
+Greedy Algorithm solve optimization problems by making the best local choice at each step in the hope of finding the global optimum. 
+It’s like taking the best option available at each moment, hoping it will lead to the best overall outcome.
+
+Here’s how it works:
+
+1. Start with the initial state of the problem. This is the starting point from where you begin making choices.
+
+2. Evaluate all possible choices you can make from the current state. Consider all the options available at that specific moment.
+
+3. Choose the option that seems best at that moment, regardless of future consequences. This is the “greedy” part – you take the best option available now, 
+even if it might not be the best in the long run.
+
+4. Move to the new state based on your chosen option. This becomes your new starting point for the next iteration.
+
+Repeat steps 2-4 until you reach the goal state or no further progress is possible. 
+Keep making the best local choices until you reach the end of the problem or get stuck..
