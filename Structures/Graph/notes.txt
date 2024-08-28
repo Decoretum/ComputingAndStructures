@@ -37,3 +37,10 @@ Let’s assume there are n vertices in the graph So, create an array of list of 
 
 adjList[0] will have all the nodes which are connected (neighbour) to vertex 0.
 adjList[1] will have all the nodes which are connected (neighbour) to vertex 1 and so on.
+
+
+Representation of Undirected Graph as Adjacency list:
+The below undirected graph has 3 vertices. So, an array of list will be created of size 3, where each indices represent the vertices. 
+Now, vertex 0 has two neighbours (i.e, 1 and 2). So, insert vertex 1 and 2 at indices 0 of array. 
+Similarly, For vertex 1, it has two neighbour (i.e, 2 and 0) So, insert vertices 2 and 0 at indices 1 of array. 
+Similarly, for vertex 2, insert its neighbours in array of list.

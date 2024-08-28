@@ -31,7 +31,7 @@ public class graph {
 
 
     //Adding an edge
-    public static void addEdge(int source, int destination, int[][] matrix, boolean isDirect)
+    public static void addEdgeMatrix(int source, int destination, int[][] matrix, boolean isDirect)
     {   
         //Undirected Graph Edge
         if (isDirect == false)
@@ -40,6 +40,23 @@ public class graph {
             matrix[destination][source] = 1;
         } else {
             matrix[source][destination] = 1;
+        }
+    }
+
+    public static void addEdgeList(int source, int destination, LinkedList<Integer>[] al, boolean isDirect)
+    {
+        //Undirected Graph Edge
+        if (!isDirect)
+        {
+            for (int i = 0; i <= al.length - 1; i++)
+            {
+                LinkedList<Integer> ll = al[i];
+                for (int j = 0; j <= al.length - 1; j++)
+                {
+                    if (j != i)
+                    ll.add(j);
+                }
+            }
         }
     }
 
@@ -63,9 +80,14 @@ public class graph {
             for (LinkedList<Integer> ll : AdjList)
             {
                 System.out.println();
+                if (ll.isEmpty())
+                System.out.println("Empty Linked List for this Vertex");
+
+                else {
                 for (Integer i : ll)
-                {  
-                    System.out.print(" " + (i) + " ");                   
+                    {  
+                        System.out.print(" " + (i) + " ");                   
+                    }
                 }
             }
         }
@@ -75,9 +97,10 @@ public class graph {
     public static void main (String args[])
     {
         int[][] matrix = makeAdjacencyMatrix(5);
-        LinkedList<Integer>[] ll = makeAdjacencyList(5);
-        addEdge(2, 1, matrix, true);
+        LinkedList<Integer>[] al = makeAdjacencyList(5);
+        addEdgeMatrix(2, 1, matrix, true);
         // displayGraph(matrix, null);
-        displayGraph(null, ll);
+        addEdgeList(0, 0, al, false);
+        displayGraph(null, al);
     }
 }
