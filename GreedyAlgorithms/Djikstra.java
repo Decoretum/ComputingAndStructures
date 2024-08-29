@@ -9,6 +9,7 @@ public class Djikstra {
 
     //Shortest Path Tree (SPT)
     //Assuming wer are dealing with undirected graph
+    //https://brilliant.org/wiki/dijkstras-short-path-finder/
     public static void spt(int[][] matrix, int src)
     {
         // Assign a distance value to all vertices in the input graph. Initialize all distance values as INFINITE . 
@@ -25,16 +26,21 @@ public class Djikstra {
 
         // Create a set sptSet (shortest path tree set) that keeps track of vertices included in the shortest path tree
         int vertex = 0;
-        HashSet<Object> sptSet = new HashSet<>();
-        while (distances.contains("INF"))
+        boolean[] sptSet = new boolean[matrix.length];
+
+        for (int i = 1; i < sptSet.length; i++)
+        {
+            sptSet[i] = false;
+        }
+        while (Arrays.asList(sptSet).contains(false))
         {
             // Pick a vertex "vertex" that is not there in sptSet and has a minimum distance value.
             // Include "vertex" to sptSet 
             if (vertex == 0)
             {
-                sptSet.add(vertex);
+                sptSet[0] = true;
             } else {
-                // #Do something
+                // #The rest of the vertices
             }
 
             // Then update the distance value of all adjacent vertices of "vertex"
@@ -54,9 +60,19 @@ public class Djikstra {
 
             // For every adjacent vertex v, if the sum of the distance value of u (from source) and weight of edge u-v , 
             // is less than the distance value of v , then update the distance value of vm
-            System.out.println("For vertex " + vertex + ", the connected vertexWeight are " + vertexWeightMap); 
-            System.out.println("");
+            int currNodeDistance = (int) distances.get(vertex);
+            for (int adjacentNodevertex : vertexWeightMap.keySet())
+            {
+                int adjacentNodeWeight = vertexWeightMap.get(adjacentNodevertex);
+                int adjacentNodeDistance = 0; //TBC
+                int sum = adjacentNodeWeight + currNodeDistance;
+
+                // if(sum < )
+            }
+
             int sum = 0;
+
+            vertex += 1;
         }
     }
 
