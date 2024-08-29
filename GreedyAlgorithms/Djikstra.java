@@ -49,22 +49,30 @@ public class Djikstra {
             for (int i = 0; i < matrix.length; i++)
             {
                 int weight = matrix[vertex][i];
-                if (vertex == 0 && i == 0)
-                {
-                    continue;
-                } else if (weight != 0) {
+                if (vertex == 0 && i == 0) continue;
+                
+                
+                else if (weight != 0) {
+                    //Do calculation of sum distance here
                     int vertexFound = i;
                     vertexWeightMap.put(vertexFound, weight);
                 }
             }
 
+            //Place this on the code scope above
             // For every adjacent vertex v, if the sum of the distance value of u (from source) and weight of edge u-v , 
             // is less than the distance value of v , then update the distance value of vm
             int currNodeDistance = (int) distances.get(vertex);
             for (int adjacentNodevertex : vertexWeightMap.keySet())
             {
+                //Weight between current node and adjancent node
                 int adjacentNodeWeight = vertexWeightMap.get(adjacentNodevertex);
+
+                //Distance of adjacent node to source node (Node 0 or source node)
                 int adjacentNodeDistance = 0; //TBC
+
+                //Sum calculation
+                //Sum = (weight between node v and u) + (distance of u from source) < (distance value of v from source)
                 int sum = adjacentNodeWeight + currNodeDistance;
 
                 // if(sum < )
@@ -87,7 +95,7 @@ public class Djikstra {
                         { 0, 0, 0, 9, 0, 10, 0, 0, 0 },
                         { 0, 0, 4, 14, 10, 0, 2, 0, 0 },
                         { 0, 0, 0, 0, 0, 2, 0, 1, 6 },
-                        { 8, 11, 0, 0, 0, 0, 1, 0, 7 },
+                        { 8, 11, 0, 0, 0, 0, 1, 0, 7 }, //For element 11, (11) + (4) < 8 == False
                         { 0, 0, 2, 0, 0, 0, 6, 7, 0 } };
 
 
