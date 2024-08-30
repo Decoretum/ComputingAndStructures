@@ -12,76 +12,101 @@ public class Djikstra {
     //https://brilliant.org/wiki/dijkstras-short-path-finder/
     public static void spt(int[][] matrix, int src)
     {
-        // Assign a distance value to all vertices in the input graph. Initialize all distance values as INFINITE . 
-        // Assign the distance value as 0 for the source vertex so that it is picked first.
-        ArrayList<Object> distances = new ArrayList<>();
-        for (int i = 0; i <= matrix.length - 1; i++)
+        //Initialize the structures used 
+        //Tracker for what are the vertices visited and not visited (shortest path tree)
+        //Tracker for distances of the vertices
+
+        int[] distances = new int[matrix.length];
+        boolean[] shortestPT = new boolean[matrix.length];
+
+        //Let's pick a random source node
+        Random randomGen = new Random();
+        int sourceVertex = randomGen.nextInt(matrix.length + 1);
+
+        for (int i = 0; i < distances.length; i++)
         {
-            if (i == 0)
-            distances.add(0);
-            
-            else
-            distances.add("INF");
+            if (i == sourceVertex)
+            {
+                distances[i] = 0;
+            }
         }
 
-        // Create a set sptSet (shortest path tree set) that keeps track of vertices included in the shortest path tree
-        int vertex = 0;
-        boolean[] sptSet = new boolean[matrix.length];
-
-        for (int i = 1; i < sptSet.length; i++)
+        //We now begin with figuring out the shortest path tree from source vertex to all other vertices
+        for (int mainVertex = 0; mainVertex <= matrix.length - 1; mainVertex++)
         {
+            for (int adjacentVertex = 0; adjacentVertex <= matrix[mainVertex].length - 1; adjacentVertex++)
+            {
+                int weight = matrix[mainVertex][adjacentVertex];
+                
+            }
+        }
+
+
+
+    }
+
+    public static int minDistanceVertex(int[] distances, boolean[] sptSet)
+    {
+        int min = Integer.MAX_VALUE;
+        int vertex = 0;
+        for (int i = 0; i <= distances.length - 1; i++)
+        {
+            boolean vertexVisited = sptSet[i];
+            int distance = distances[i];   
+
+            if (vertexVisited == false && distance < min)
+            {
+                min = distance;
+                vertex = i;
+            }
+        }
+
+        return vertex;
+    }
+
+    public static void dijkstras(int[][] graph, int source)
+    {
+        //Initialize array for holding distances
+        //Initialize array for determining if vertex is included in shortest path tree (or source to vertex is finalized)
+        int[] distances = new int[graph.length];
+        boolean[] sptSet = new boolean[graph.length];
+
+        for (int i = 0; i <= graph.length - 1; i++)
+        {
+            distances[i] = Integer.MAX_VALUE;
             sptSet[i] = false;
         }
-        while (Arrays.asList(sptSet).contains(false))
+
+        //Since source node is the first vertex, initialize its distance to 0
+        distances[source] = 0;
+
+        while (Arrays.toString(sptSet).contains("false"))
         {
-            // Pick a vertex "vertex" that is not there in sptSet and has a minimum distance value.
-            // Include "vertex" to sptSet 
-            if (vertex == 0)
+            //We find vertex with the minimum distance and hasn't been explored yet
+            int minVertex = minDistanceVertex(distances, sptSet);
+            
+            //Mark this vertex as visisted
+            sptSet[minVertex] = true;
+            
+            //Iterate over adjacent vertices and update if needed
+            for (int j = 0; j <= graph[minVertex].length -1; j++)
             {
-                sptSet[0] = true;
-            } else {
-                // #The rest of the vertices
+                int weight = graph[minVertex][j];
+                int adjacentVertexDistance = distances[j];
+                int currVertexDistance = distances[minVertex];
+                int sum = weight + currVertexDistance;  
+                boolean notDiscovered = sptSet[j] == false;
+
+                if (sum < adjacentVertexDistance && notDiscovered == true && weight != 0)
+                {
+                    distances[j] = sum;
+                }               
             }
-
-            // Then update the distance value of all adjacent vertices of "vertex"
-            // Iterate through the adjacent vertices
-            HashMap<Integer, Integer> vertexWeightMap = new HashMap<>(); 
-            for (int i = 0; i < matrix.length; i++)
-            {
-                int weight = matrix[vertex][i];
-                if (vertex == 0 && i == 0) continue;
-                
-                
-                else if (weight != 0) {
-                    //Do calculation of sum distance here
-                    int vertexFound = i;
-                    vertexWeightMap.put(vertexFound, weight);
-                }
-            }
-
-            //Place this on the code scope above
-            // For every adjacent vertex v, if the sum of the distance value of u (from source) and weight of edge u-v , 
-            // is less than the distance value of v , then update the distance value of vm
-            int currNodeDistance = (int) distances.get(vertex);
-            for (int adjacentNodevertex : vertexWeightMap.keySet())
-            {
-                //Weight between current node and adjancent node
-                int adjacentNodeWeight = vertexWeightMap.get(adjacentNodevertex);
-
-                //Distance of adjacent node to source node (Node 0 or source node)
-                int adjacentNodeDistance = 0; //TBC
-
-                //Sum calculation
-                //Sum = (weight between node v and u) + (distance of u from source) < (distance value of v from source)
-                int sum = adjacentNodeWeight + currNodeDistance;
-
-                // if(sum < )
-            }
-
-            int sum = 0;
-
-            vertex += 1;
         }
+
+        System.out.println("Distances of vertexes from source Node");
+        System.out.println(Arrays.toString(distances));
+
     }
 
 
@@ -99,6 +124,6 @@ public class Djikstra {
                         { 0, 0, 2, 0, 0, 0, 6, 7, 0 } };
 
 
-        spt(graph, 0);
+        dijkstras(graph, 0);
     }
 }
