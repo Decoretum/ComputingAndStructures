@@ -1,5 +1,5 @@
 package GreedyAlgorithms;
-import Structures.Graph.*;
+// import Structures.Graph.Graph;
 import java.util.*;
 
 public class Djikstra {
@@ -22,6 +22,7 @@ public class Djikstra {
         //Let's pick a random source node
         Random randomGen = new Random();
         int sourceVertex = randomGen.nextInt(matrix.length + 1);
+        // sourceVertex = 0;
 
         for (int i = 0; i < distances.length; i++)
         {
@@ -29,19 +30,37 @@ public class Djikstra {
             {
                 distances[i] = 0;
             }
+            else
+            {
+               distances[i] = Integer.MAX_VALUE;
+            }
+            shortestPT[i] = false;
         }
 
         //We now begin with figuring out the shortest path tree from source vertex to all other vertices
-        for (int mainVertex = 0; mainVertex <= matrix.length - 1; mainVertex++)
+        while (Arrays.toString(shortestPT).contains("false")) //Main vertexs
         {
+            int mainVertex = minDistanceVertex(distances, shortestPT);
+
+            //sum = (weight between current vertex and adjacent vertex) + (distance of current vertex from source vertex)
             for (int adjacentVertex = 0; adjacentVertex <= matrix[mainVertex].length - 1; adjacentVertex++)
             {
                 int weight = matrix[mainVertex][adjacentVertex];
-                
+                int currentVertexDistance = distances[mainVertex];
+                int adjacentVertexDistance = distances[adjacentVertex];
+                int sum = weight + currentVertexDistance;
+
+                shortestPT[mainVertex] = true;
+
+                if (sum < adjacentVertexDistance && weight != 0)
+                {
+                  distances[adjacentVertex] = sum;
+                } 
             }
         }
 
-
+        System.out.println("Shortest path set from Source vertex " + sourceVertex);
+        System.out.println(Arrays.toString(distances));
 
     }
 
@@ -64,51 +83,6 @@ public class Djikstra {
         return vertex;
     }
 
-    public static void dijkstras(int[][] graph, int source)
-    {
-        //Initialize array for holding distances
-        //Initialize array for determining if vertex is included in shortest path tree (or source to vertex is finalized)
-        int[] distances = new int[graph.length];
-        boolean[] sptSet = new boolean[graph.length];
-
-        for (int i = 0; i <= graph.length - 1; i++)
-        {
-            distances[i] = Integer.MAX_VALUE;
-            sptSet[i] = false;
-        }
-
-        //Since source node is the first vertex, initialize its distance to 0
-        distances[source] = 0;
-
-        while (Arrays.toString(sptSet).contains("false"))
-        {
-            //We find vertex with the minimum distance and hasn't been explored yet
-            int minVertex = minDistanceVertex(distances, sptSet);
-            
-            //Mark this vertex as visisted
-            sptSet[minVertex] = true;
-            
-            //Iterate over adjacent vertices and update if needed
-            for (int j = 0; j <= graph[minVertex].length -1; j++)
-            {
-                int weight = graph[minVertex][j];
-                int adjacentVertexDistance = distances[j];
-                int currVertexDistance = distances[minVertex];
-                int sum = weight + currVertexDistance;  
-                boolean notDiscovered = sptSet[j] == false;
-
-                if (sum < adjacentVertexDistance && notDiscovered == true && weight != 0)
-                {
-                    distances[j] = sum;
-                }               
-            }
-        }
-
-        System.out.println("Distances of vertexes from source Node");
-        System.out.println(Arrays.toString(distances));
-
-    }
-
 
     public static void main (String args[])
     {
@@ -124,6 +98,6 @@ public class Djikstra {
                         { 0, 0, 2, 0, 0, 0, 6, 7, 0 } };
 
 
-        dijkstras(graph, 0);
+        spt(graph, 0);
     }
 }

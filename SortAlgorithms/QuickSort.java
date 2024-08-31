@@ -2,7 +2,7 @@ package SortAlgorithms;
 import java.util.Arrays;
 
 
-public class QuickSort { //https://www.geeksforgeeks.org/quick-sort-algorithm/
+public class QuickSort { //https://www.geeksforgeeks.org/quick-sort-algorithm/, https://www.youtube.com/watch?v=COk73cpQbFQ
 
 public static void quickSort(int[] a, int start, int end)
 {
@@ -41,7 +41,7 @@ public static int partition(int[] a, int start, int end)
 
 public static void main(String args[])
 {
-   int t[] = {7, 2, 1, 6, 8, 5, 3, 4};
+   int t[] = {7, 2, 1, 6, 8, 5, 3, 4, 1};
    quickSort(t, 0, t.length - 1);
    System.out.println(Arrays.stream(t).boxed().toList());
 }

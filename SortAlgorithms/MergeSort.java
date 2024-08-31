@@ -23,7 +23,7 @@ public class MergeSort { //https://www.w3schools.com/dsa/dsa_algo_mergesort.php,
 
             if (left < right)
             {
-               c[p] = left;
+               c[p] = left;`
                i++;
                p++;
             } else {
