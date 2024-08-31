@@ -1,5 +1,4 @@
 package GreedyAlgorithms;
-// import Structures.Graph.Graph;
 import java.util.*;
 
 public class Djikstra {
@@ -10,7 +9,7 @@ public class Djikstra {
     //Shortest Path Tree (SPT)
     //Assuming wer are dealing with undirected graph
     //https://brilliant.org/wiki/dijkstras-short-path-finder/
-    public static void spt(int[][] matrix, int src)
+    public static void spt(int[][] matrix)
     {
         //Initialize the structures used 
         //Tracker for what are the vertices visited and not visited (shortest path tree)
@@ -41,6 +40,7 @@ public class Djikstra {
         while (Arrays.toString(shortestPT).contains("false")) //Main vertexs
         {
             int mainVertex = minDistanceVertex(distances, shortestPT);
+            shortestPT[mainVertex] = true;
 
             //sum = (weight between current vertex and adjacent vertex) + (distance of current vertex from source vertex)
             for (int adjacentVertex = 0; adjacentVertex <= matrix[mainVertex].length - 1; adjacentVertex++)
@@ -49,8 +49,6 @@ public class Djikstra {
                 int currentVertexDistance = distances[mainVertex];
                 int adjacentVertexDistance = distances[adjacentVertex];
                 int sum = weight + currentVertexDistance;
-
-                shortestPT[mainVertex] = true;
 
                 if (sum < adjacentVertexDistance && weight != 0)
                 {
@@ -98,6 +96,6 @@ public class Djikstra {
                         { 0, 0, 2, 0, 0, 0, 6, 7, 0 } };
 
 
-        spt(graph, 0);
+        spt(graph);
     }
 }

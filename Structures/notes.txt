@@ -1,0 +1,17 @@
+Linear Data Structures
+
+elements are occur in sequential memory locations or are logically connected, such as stacks and queues
+
+Stack
+- elements inserted at the rear end
+- elements popped/removed at the rear end as well
+- LIFO
+
+Queue
+- elements inserted at the beginning (enqueue)
+- elements removed at the rear end (dequeue)
+- FIFO
+
+Non-linear data Structures
+
+elements are not sequential, such as trees and graphs
