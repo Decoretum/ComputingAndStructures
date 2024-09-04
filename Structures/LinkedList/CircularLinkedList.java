@@ -2,14 +2,14 @@ package Structures.LinkedList;
 
 public class CircularLinkedList {
     Integer value;
-    CircularLinkedList end;
+    // CircularLinkedList end;
     CircularLinkedList next;
 
 
     public CircularLinkedList(int val) {
         value = val;
         setNext(null);
-        setEnd(null);
+        // setEnd(null);
     }
 
     public void appendNode(int val)
@@ -17,14 +17,13 @@ public class CircularLinkedList {
         CircularLinkedList currNode = this;
         while (currNode != null)
         {   
-            if (currNode.getNext() == null)
+            if (currNode.getNext() == null || currNode.getNext() == this)
             break;
 
             currNode = (CircularLinkedList) currNode.getNext();
         }
         CircularLinkedList newNode = new CircularLinkedList(val);
         currNode.setNext(newNode);
-        setEnd(newNode);
         newNode.setNext(this); //Cause of problem in this function
     }
 
@@ -89,7 +88,7 @@ public class CircularLinkedList {
         }
 
         if (counter < position)
-        backNode.setNext(null);
+        backNode.setNext(this);
 
         else if (backNode == null)
         this.value = null;
@@ -104,11 +103,13 @@ public class CircularLinkedList {
         CircularLinkedList currNode = this;
         while (currNode != null)
         {
-            System.out.println(currNode.value);
-            if (end == (CircularLinkedList) currNode.getNext())
-            break;
-
-            if (currNode.getNext() != null)
+            if (currNode.getNext() == this)
+            {
+                System.out.print(currNode.value);
+                break;
+            }
+            
+            else if (currNode.getNext() != null)
             System.out.print(currNode.value + " -> ");
 
             else
@@ -128,9 +129,4 @@ public class CircularLinkedList {
        next = nextNode;
     }
 
-    public void setEnd (CircularLinkedList endNode)
-    {
-        end = endNode;
-    }
-    
 }
