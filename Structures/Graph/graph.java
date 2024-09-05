@@ -19,15 +19,21 @@ public class graph {
         for (int i = 0; i <= a - 1; i++)
         {
             LinkedList<Integer> ll = new LinkedList<Integer>();
-            for (int j = 0; j <= a-1; j++)
-            {
-                if (j != i)
-                ll.add(j);
-            }
+            // for (int j = 0; j <= a-1; j++)
+            // {
+            //     ll.add(0);
+            // }
             array[i] = ll;
         }
         return array;
     }    
+
+    //Undirected Graph
+    public static void addAdjacencyListConnection(LinkedList<Integer>[] adjacencyList, int source, int destination, int weight)
+    {
+        adjacencyList[source].add(destination);
+        adjacencyList[destination].add(source);
+    }
 
 
     //Adding an edge
@@ -77,11 +83,13 @@ public class graph {
                 }
             }
         } else {
+            int vertex = 0;
             for (LinkedList<Integer> ll : AdjList)
             {
                 System.out.println();
+
                 if (ll.isEmpty())
-                System.out.println("Empty Linked List for this Vertex");
+                System.out.println("Empty Linked List for Vertex " + vertex);
 
                 else {
                 for (Integer i : ll)
@@ -89,9 +97,10 @@ public class graph {
                         System.out.print(" " + (i) + " ");                   
                     }
                 }
+                vertex++;
             }
         }
-        
+        System.out.println("");
     }
 
     public static void main (String args[])
