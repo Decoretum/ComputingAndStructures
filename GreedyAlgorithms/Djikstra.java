@@ -95,7 +95,6 @@ public class Djikstra {
                         { 8, 11, 0, 0, 0, 0, 1, 0, 7 }, //For element 11, (11) + (4) < 8 == False
                         { 0, 0, 2, 0, 0, 0, 6, 7, 0 } };
 
-
         spt(graph);
     }
 }

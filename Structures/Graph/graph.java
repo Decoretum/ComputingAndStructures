@@ -19,11 +19,11 @@ public class graph {
         for (int i = 0; i <= a - 1; i++)
         {
             LinkedList<Integer> ll = new LinkedList<Integer>();
-            // for (int j = 0; j <= a-1; j++)
-            // {
-            //     if (j != i)
-            //     ll.add(j);
-            // }
+            for (int j = 0; j <= a-1; j++)
+            {
+                if (j != i)
+                ll.add(j);
+            }
             array[i] = ll;
         }
         return array;

@@ -16,10 +16,13 @@ public class PlayTest {
 		Long duration = now.until(dateRented, ChronoUnit.DAYS);
 		System.out.println(2 & 13);
 		LinkedList<Integer> ll = new LinkedList<>();
+		Queue<Object> q = new LinkedList<>();
 		
 
         int[]a = {1, 2, 4, 5, 6};
-        System.out.println(a);
+		q.add(4);
+		q.add(2);
+        System.out.println(q);
 	}
 
 }
