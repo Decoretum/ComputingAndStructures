@@ -126,10 +126,15 @@ public class Djikstra {
             boolean vertexVisited = sptSet[i];
             int distance = distances[i];   
 
+            //For the second condition, we could do (distance < Integer.MAX_VALUE)
+            //But why? The current condition is just more efficient
+            //Finding minimum value isn't really necessary, as long as we find the vertex that 
+            //isn't visited yet
             if (vertexVisited == false && distance < min)
             {
                 min = distance;
                 vertex = i;
+                break;
             }
         }
 
