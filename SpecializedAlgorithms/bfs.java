@@ -44,11 +44,11 @@ public class bfs {
         System.out.println("");
 
         // 0 - 1, 0 - 2, 1 - 3, 1 - 4, 2 - 1
-        Structures.Graph.graph.addAdjacencyListConnection(Graph, 0, 1, 20);
-        Structures.Graph.graph.addAdjacencyListConnection(Graph, 1, 3, 19);
-        Structures.Graph.graph.addAdjacencyListConnection(Graph, 1, 4, 2);
-        Structures.Graph.graph.addAdjacencyListConnection(Graph, 2, 1, 9);
-        Structures.Graph.graph.addAdjacencyListConnection(Graph, 2, 0, 10);
+        graph.addAdjacencyListConnection(Graph, 0, 1, 20);
+        graph.addAdjacencyListConnection(Graph, 1, 3, 19);
+        graph.addAdjacencyListConnection(Graph, 1, 4, 2);
+        graph.addAdjacencyListConnection(Graph, 2, 1, 9);
+        graph.addAdjacencyListConnection(Graph, 2, 0, 10);
 
         Structures.Graph.graph.displayGraph(null, Graph);
         BFS_AL(Graph, 3);

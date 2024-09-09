@@ -15,12 +15,17 @@ public class Djikstra {
         //Tracker for what are the vertices visited and not visited (shortest path tree)
         //Tracker for distances of the vertices
 
+        //The Source vertex we start on dictates the succeeding distances of the adjacent vertex 
+        //to the chosen Source vertex
+        
+        //Not all vertex have the same minimum distance from one to another
+
         int[] distances = new int[matrix.length];
         boolean[] shortestPT = new boolean[matrix.length];
 
         //Let's pick a random source node
         Random randomGen = new Random();
-        int sourceVertex = randomGen.nextInt(matrix.length + 1);
+        int sourceVertex = randomGen.nextInt(matrix.length);
         // sourceVertex = 0;
 
         for (int i = 0; i < distances.length; i++)
@@ -41,12 +46,12 @@ public class Djikstra {
         {
             int mainVertex = minDistanceVertex(distances, shortestPT);
             shortestPT[mainVertex] = true;
+            int currentVertexDistance = distances[mainVertex];
 
             //sum = (weight between current vertex and adjacent vertex) + (distance of current vertex from source vertex)
             for (int adjacentVertex = 0; adjacentVertex <= matrix[mainVertex].length - 1; adjacentVertex++)
             {
                 int weight = matrix[mainVertex][adjacentVertex];
-                int currentVertexDistance = distances[mainVertex];
                 int adjacentVertexDistance = distances[adjacentVertex];
                 int sum = weight + currentVertexDistance;
 
@@ -60,6 +65,56 @@ public class Djikstra {
         System.out.println("Shortest path set from Source vertex " + sourceVertex);
         System.out.println(Arrays.toString(distances));
 
+    }
+
+    //Demo version
+    //Coded and Debugged as I Visualized the Graph
+    //Did not refer to old code
+    public static void dijkstra(int[][] graph)
+    {
+        //Randomize Source Vertex
+        Random randomizer = new Random();
+        int sourceVertex = randomizer.nextInt(graph.length);
+
+        //Initialize visited tracker and distances tracker
+        int [] distances = new int[graph.length];
+        boolean [] visited = new boolean[graph.length];
+        for (int i = 0; i <= graph.length - 1; i++)
+        {
+            distances[i] = Integer.MAX_VALUE;
+            visited[i] = false;
+        }
+
+        //Since we are starting with the source vertex, we are at this position 
+        //so distance is 0 to itself
+        distances[sourceVertex] = 0;
+
+        //Proceed with the actual algorithm
+        while(Arrays.toString(visited).contains("false"))
+        {
+            int currentVertex = minDistanceVertex(distances, visited);
+            int currentVertexDistance = distances[currentVertex];
+            visited[currentVertex] = true;
+
+            for (int adjacentVertex = 0; adjacentVertex <= graph[currentVertex].length - 1; adjacentVertex++)
+            {
+                int weight = graph[currentVertex][adjacentVertex];
+                
+                //There is a connection between current vertex and adjacent vertex
+                if (weight != 0)
+                {
+                    int discoveredAdjacentVertexDistance = currentVertexDistance + weight;
+                    int currentAdjacentVertexDistance = distances[adjacentVertex];
+                    if (discoveredAdjacentVertexDistance < currentAdjacentVertexDistance)
+                    {
+                        distances[adjacentVertex] = discoveredAdjacentVertexDistance;
+                    }
+                }
+            }
+        }
+
+        System.out.println("Shortest Distances from Vertex " + sourceVertex);
+        System.out.println(Arrays.toString(distances));
     }
 
     public static int minDistanceVertex(int[] distances, boolean[] sptSet)
@@ -95,6 +150,6 @@ public class Djikstra {
                         { 8, 11, 0, 0, 0, 0, 1, 0, 7 }, //For element 11, (11) + (4) < 8 == False
                         { 0, 0, 2, 0, 0, 0, 6, 7, 0 } };
 
-        spt(graph);
+        dijkstra(graph);
     }
 }
