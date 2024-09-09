@@ -1,11 +1,12 @@
 package SpecializedAlgorithms;
 import java.util.*;
+import Structures.Graph.graph;
 
 //https://www.geeksforgeeks.org/breadth-first-search-or-bfs-for-a-graph/
 
 public class bfs {
 
-    public static void BFS_Matrix(LinkedList<Integer>[] graph, int source)
+    public static void BFS_AL(LinkedList<Integer>[] graph, int source)
     {
         Queue<Object> q = new LinkedList<>();
         boolean[] visited = new boolean[graph.length];
@@ -30,8 +31,7 @@ public class bfs {
                 {
                     System.out.println("Vertex " + popped + "\'s neighbor: " + connectedVertex);
                     q.add(connectedVertex);
-                }
-                
+                }        
             }
         }
 
@@ -40,17 +40,17 @@ public class bfs {
     public static void main (String args[])
     {
 
-        LinkedList<Integer>[] graph = Structures.Graph.graph.makeAdjacencyList(6);
+        LinkedList<Integer>[] Graph = graph.makeAdjacencyList(6);//Structures.Graph.graph.makeAdjacencyList(6);
         System.out.println("");
 
         // 0 - 1, 0 - 2, 1 - 3, 1 - 4, 2 - 1
-        Structures.Graph.graph.addAdjacencyListConnection(graph, 0, 1, 20);
-        Structures.Graph.graph.addAdjacencyListConnection(graph, 1, 3, 19);
-        Structures.Graph.graph.addAdjacencyListConnection(graph, 1, 4, 2);
-        Structures.Graph.graph.addAdjacencyListConnection(graph, 2, 1, 9);
-        Structures.Graph.graph.addAdjacencyListConnection(graph, 2, 0, 10);
+        Structures.Graph.graph.addAdjacencyListConnection(Graph, 0, 1, 20);
+        Structures.Graph.graph.addAdjacencyListConnection(Graph, 1, 3, 19);
+        Structures.Graph.graph.addAdjacencyListConnection(Graph, 1, 4, 2);
+        Structures.Graph.graph.addAdjacencyListConnection(Graph, 2, 1, 9);
+        Structures.Graph.graph.addAdjacencyListConnection(Graph, 2, 0, 10);
 
-        Structures.Graph.graph.displayGraph(null, graph);
-        BFS_Matrix(graph, 0);
+        Structures.Graph.graph.displayGraph(null, Graph);
+        BFS_AL(Graph, 3);
     }
 }

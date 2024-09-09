@@ -7,9 +7,17 @@ Stack
 - elements popped/removed at the rear end as well
 - LIFO
 
+Use Cases:
+recursion
+• leeping track of function calls
+• evaluation of expressions
+• reversing characters
+• servicing hardware interrupts
+• solving combinatorial problems using backtracking
+
 Queue
-- elements inserted at the beginning (enqueue)
-- elements removed at the rear end (dequeue)
+- elements inserted at the rear end (enqueue)
+- elements removed at the front/top (dequeue)
 - FIFO
 
 Non-linear data Structures
