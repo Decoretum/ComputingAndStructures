@@ -75,7 +75,7 @@ public class Djikstra {
         //Randomize Source Vertex
         Random randomizer = new Random();
         int sourceVertex = randomizer.nextInt(graph.length);
-
+        
         //Initialize visited tracker and distances tracker
         int [] distances = new int[graph.length];
         boolean [] visited = new boolean[graph.length];
@@ -145,7 +145,7 @@ public class Djikstra {
     public static void main (String args[])
     {
         int graph[][]
-        = new int[][] { { 0, 4, 0, 0, 0, 0, 0, 8, 0 },
+        = new int[][] { { 0, 4, 0, 0, 0, 0, 0, 8, 0 }, 
                         { 4, 0, 8, 0, 0, 0, 0, 11, 0 },
                         { 0, 8, 0, 7, 0, 4, 0, 0, 2 },
                         { 0, 0, 7, 0, 9, 14, 0, 0, 0 },
