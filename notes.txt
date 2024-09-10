@@ -1,3 +1,16 @@
 
 Fundamentals of algorithms
 https://www.geeksforgeeks.org/fundamentals-of-algorithms/?ref=shm
+
+
+Concepts taken down notes in this repository:
+- Greedy algorithms
+- Sort algorithms
+- Data structures
+- Complements
+- Bitwise
+
+The rest of the notes regarding Data Structures and Algorithms as well as SQL can be found
+in the LogSeq (0.10.0 version) Repository 
+
+https://github.com/Decoretum/LogSeqLife
