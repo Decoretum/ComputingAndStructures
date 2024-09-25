@@ -1,4 +1,4 @@
-package DynamicProgramming;
+package DynamicProgramming.Tabulation;
 
 public class exercise3 {
 

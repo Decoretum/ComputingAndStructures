@@ -1,5 +1,6 @@
-package DynamicProgramming;
+package DynamicProgramming.Memoization;
 
+// 1D Memoization
 public class exercise {
 
    //To get state(N) assuming that only elements 1, 3, and 5 are used
@@ -19,6 +20,7 @@ public class exercise {
    //We start with dealing with the main solution, then we recursively brain down this solution to smaller sub-problems
    //Value of sub-problems are stored in a storage to be used for subsequent recursive calls
    //Finally, we get the output by consolidating all the outputs from the smaller subproblems as we call the main solution
+   
    static int[] memo = new int[Integer.MAX_VALUE / 7];
 
    public static int stateMemo(int N)
@@ -42,7 +44,7 @@ public class exercise {
 
     public static void main (String args[])
     {
-      System.out.println(stateMemo(3));
+      System.out.println(stateMemo(10));
       //state(3) = state(2) + state(0) =  1 + 1
     }
 

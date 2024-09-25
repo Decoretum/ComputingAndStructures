@@ -1,5 +1,6 @@
-package DynamicProgramming;
+package DynamicProgramming.Memoization;
 
+// 1D Memoization
 public class exercise2 {
    static int[] map = new int[Integer.MAX_VALUE / 7];
    
