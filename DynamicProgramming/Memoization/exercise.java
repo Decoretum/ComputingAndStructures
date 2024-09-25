@@ -35,9 +35,7 @@ public class exercise {
 
       else
       {
-         int newValue = stateMemo(N - 1) + stateMemo(N - 3) + stateMemo(N - 5);
-         memo[N] = newValue;
-         return newValue;
+         return memo[N] = stateMemo(N - 1) + stateMemo(N - 3) + stateMemo(N - 5);
       }
          
    }
