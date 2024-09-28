@@ -9,7 +9,6 @@ public class KMP {
         int[] lps = LPSArray(pattern);
         int pointerA = 0;
         boolean patternFound;
-        ArrayList<Object> indexes = new ArrayList<>();
         while (pointerA <= text.length()-1)
         {
             patternFound = true;
@@ -43,7 +42,6 @@ public class KMP {
                         char charFromPattern = pattern.charAt(lpsValue);
                         if (charFromPattern == textChar)
                         {
-                            indexes.add(pointerA - lpsValue);
                             System.out.println("Pattern found at index " + (pointerA - lpsValue));
                             patternFound = true;
                             pointerA++;
