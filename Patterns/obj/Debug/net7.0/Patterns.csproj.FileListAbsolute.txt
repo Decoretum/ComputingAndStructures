@@ -1,0 +1,14 @@
+/Users/Gamadan/Desktop/JavaDataStructures/Patterns/obj/Debug/net7.0/Patterns.GeneratedMSBuildEditorConfig.editorconfig
+/Users/Gamadan/Desktop/JavaDataStructures/Patterns/obj/Debug/net7.0/Patterns.AssemblyInfoInputs.cache
+/Users/Gamadan/Desktop/JavaDataStructures/Patterns/obj/Debug/net7.0/Patterns.AssemblyInfo.cs
+/Users/Gamadan/Desktop/JavaDataStructures/Patterns/obj/Debug/net7.0/Patterns.csproj.CoreCompileInputs.cache
+/Users/Gamadan/Desktop/JavaDataStructures/Patterns/bin/Debug/net7.0/Patterns
+/Users/Gamadan/Desktop/JavaDataStructures/Patterns/bin/Debug/net7.0/Patterns.deps.json
+/Users/Gamadan/Desktop/JavaDataStructures/Patterns/bin/Debug/net7.0/Patterns.runtimeconfig.json
+/Users/Gamadan/Desktop/JavaDataStructures/Patterns/bin/Debug/net7.0/Patterns.dll
+/Users/Gamadan/Desktop/JavaDataStructures/Patterns/bin/Debug/net7.0/Patterns.pdb
+/Users/Gamadan/Desktop/JavaDataStructures/Patterns/obj/Debug/net7.0/Patterns.dll
+/Users/Gamadan/Desktop/JavaDataStructures/Patterns/obj/Debug/net7.0/refint/Patterns.dll
+/Users/Gamadan/Desktop/JavaDataStructures/Patterns/obj/Debug/net7.0/Patterns.pdb
+/Users/Gamadan/Desktop/JavaDataStructures/Patterns/obj/Debug/net7.0/Patterns.genruntimeconfig.cache
+/Users/Gamadan/Desktop/JavaDataStructures/Patterns/obj/Debug/net7.0/ref/Patterns.dll

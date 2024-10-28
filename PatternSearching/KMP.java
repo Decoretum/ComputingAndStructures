@@ -91,3 +91,10 @@ public class KMP {
         return newArray;
     }
 }
+
+/* Knuth-Morris-Pratt Algorithm
+ * Time Complexity: O(N + M) where N is the length of the text 
+ * and M is the length of the pattern to be found.
+Auxiliary Space: O(M)
+ * 
+ */
